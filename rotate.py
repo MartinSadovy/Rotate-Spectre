@@ -60,7 +60,7 @@ def rotate(state):
 
     check_call(['xinput', 'set-prop', TOUCHSCREEN, 'Coordinate Transformation Matrix',] + s['coord'].split())
     
-    if "Pen (0)" in check_output(['xinput', '--list']):
+    if "Pen (0)" in check_output(['xinput', '--list']).decode("utf-8"):
         check_call(['xinput', 'set-prop', PEN, 'Coordinate Transformation Matrix',] + s['coord'].split())
 
     if disable_touchpads:
